@@ -1,0 +1,662 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Quick Access for Sheets - Professional Google Sheets Manager for macOS</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+	scroll-behavior: smooth;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 0;
+		padding: 0.5rem;
+		max-width: 100%;
+		color: rgb(55, 53, 47);
+		background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+		height: fit-content;
+	}
+}
+
+body {
+	line-height: 1.6;
+	white-space: normal;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+a,
+a.visited {
+	color: #3677EA;
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+a:hover {
+	color: #2860c7;
+	text-decoration: underline;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 3.5rem;
+	font-weight: 800;
+	margin-top: 0;
+	margin-bottom: 0.5em;
+	background: linear-gradient(135deg, #3677EA 0%, #2860c7 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-align: center;
+}
+
+h1 {
+	font-size: 2rem;
+	margin-top: 2.5rem;
+	font-weight: 700;
+	color: #2c3e50;
+}
+
+h2 {
+	font-size: 2rem;
+	margin-top: 3rem;
+	margin-bottom: 1.5rem;
+	font-weight: 700;
+	color: #2c3e50;
+	border-bottom: 3px solid #3677EA;
+	padding-bottom: 0.5rem;
+	display: inline-block;
+}
+
+h3 {
+	font-size: 1.4rem;
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+	font-weight: 600;
+	color: #34495e;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem;
+	background: white;
+	box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+	border-radius: 20px;
+}
+
+.hero-section {
+	text-align: center;
+	padding: 3rem 2rem;
+	background: linear-gradient(135deg, #3677EA 0%, #2860c7 100%);
+	border-radius: 20px;
+	margin-bottom: 3rem;
+	color: white;
+}
+
+.hero-section .page-title {
+	-webkit-text-fill-color: white;
+	color: white;
+	margin-bottom: 1rem;
+}
+
+.hero-section .page-description {
+	font-size: 1.25rem;
+	line-height: 1.8;
+	color: rgba(255,255,255,0.95);
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.feature-card {
+	background: white;
+	border-radius: 12px;
+	padding: 1.5rem;
+	margin-bottom: 1.5rem;
+	border: 2px solid #e1e8ed;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 20px rgba(54, 119, 234, 0.2);
+}
+
+.feature-card h3 {
+	margin-top: 0;
+	color: #34495e;
+	filter: grayscale(100%);
+}
+
+.feature-card h3::first-letter {
+	filter: grayscale(0%);
+}
+
+.feature-grid {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	margin: 2rem 0;
+}
+
+.faq-item {
+	background: white;
+	border: 1px solid #e1e8ed;
+	border-radius: 10px;
+	padding: 1.5rem;
+	margin-bottom: 1rem;
+	transition: box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+	box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.faq-item h3 {
+	color: #3677EA;
+	margin-top: 0;
+}
+
+.cta-section {
+	background: linear-gradient(135deg, #5a93ed 0%, #3677EA 100%);
+	color: white;
+	padding: 3rem;
+	border-radius: 15px;
+	text-align: center;
+	margin: 3rem 0;
+}
+
+.cta-section h2 {
+	color: white;
+	border: none;
+	margin-top: 0;
+}
+
+.cta-section ol {
+	list-style-position: inside;
+	padding-left: 0;
+	text-align: left;
+	max-width: 600px;
+	margin: 2rem auto;
+}
+
+.cta-section ol li {
+	margin-bottom: 1rem;
+	padding-left: 0;
+}
+
+.steps-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 2rem;
+	margin: 2rem 0;
+}
+
+.step-card {
+	background: white;
+	border: 2px solid #3677EA;
+	border-radius: 12px;
+	padding: 2rem;
+	text-align: left;
+	transition: transform 0.3s ease;
+}
+
+.step-card:hover {
+	transform: scale(1.05);
+}
+
+.step-card h3 {
+	margin-top: 0;
+	color: #3677EA;
+}
+
+.footer-section {
+	background: #2c3e50;
+	color: white;
+	padding: 2rem;
+	border-radius: 15px;
+	text-align: center;
+	margin-top: 3rem;
+}
+
+.footer-section a {
+	color: #3677EA;
+}
+
+.disclaimer-box {
+	background: #fff3cd;
+	border: 2px solid #ffc107;
+	border-radius: 10px;
+	padding: 1.5rem;
+	margin: 2rem 0;
+}
+
+.support-box {
+	background: linear-gradient(135deg, #3677EA 0%, #2860c7 100%);
+	color: white;
+	padding: 2rem;
+	border-radius: 12px;
+	text-align: center;
+}
+
+.support-box h2,
+.support-box p {
+	color: white;
+}
+
+.support-box a {
+	color: white;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.support-box ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.support-box ul li {
+	list-style: none;
+}
+
+/* Fixed header navigation */
+.fixed-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: rgba(255, 255, 255, 0.95);
+	backdrop-filter: blur(10px);
+	box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+	z-index: 1000;
+	padding: 1rem 2rem;
+	display: none;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.fixed-header.visible {
+	display: flex;
+}
+
+.fixed-header-left {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.fixed-header-logo {
+	width: 40px;
+	height: 40px;
+	border-radius: 8px;
+}
+
+.fixed-header-name {
+	font-size: 1.25rem;
+	font-weight: 700;
+	color: #2c3e50;
+}
+
+.fixed-header-contact {
+	background: linear-gradient(135deg, #3677EA 0%, #2860c7 100%);
+	color: white;
+	padding: 0.5rem 1.5rem;
+	border-radius: 8px;
+	border: none;
+	cursor: pointer;
+	font-weight: 600;
+	transition: transform 0.2s ease;
+}
+
+.fixed-header-contact:hover {
+	transform: translateY(-2px);
+}
+
+body.has-fixed-header {
+	padding-top: 80px;
+}
+
+.callout {
+	border-radius: 12px;
+	padding: 1.5rem;
+	background: white;
+	box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 2px;
+	visibility: visible;
+	border: none;
+	border-bottom: 2px solid rgba(54, 119, 234, 0.2);
+	margin: 3rem 0;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+	list-style: disc;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+img {
+	max-width: 100%;
+}
+</style></head><body><div class="fixed-header" id="fixedHeader">
+	<div class="fixed-header-left">
+		<img src="icon.png" alt="Quick Access for Sheets" class="fixed-header-logo">
+		<span class="fixed-header-name">Quick Access for Sheets</span>
+	</div>
+	<button class="fixed-header-contact" onclick="scrollToSupport()">Contact Us</button>
+</div>
+<article class="page sans"><div class="container"><header class="hero-section"><figure class="image" style="text-align:center;margin:0 0 2rem 0"><a href="icon.png"><img style="width:180px" src="icon.png"/></a></figure><h1 class="page-title">Quick Access for Sheets</h1><p class="page-description">Professional Google Sheets Manager for macOS<br><br>A powerful, native macOS application designed specifically for managing your Google Workspace documents. With an intuitive interface and seamless integration, Quick Access for Sheets transforms how you work with Google Sheets ,Docs, Slides, Forms, and Drawings.</p></header><div class="page-body"></div><hr/>
+
+<h2>Key Features</h2>
+<div class="feature-grid">
+<div class="feature-card">
+<h3>📄 Smart Document Categories</h3>
+<p><strong>Organized by Document Type</strong></p>
+<ul>
+<li>Quick access to all your Google Sheets</li>
+<li>Dedicated view for Google Docs</li>
+<li>Browse all your Google Slides presentations</li>
+<li>Manage Google Forms with ease</li>
+<li>Access Google Drawings in one place</li>
+<li>My Drive folder navigation for complete file access</li>
+</ul>
+</div>
+
+<div class="feature-card">
+<h3>📁 Comprehensive File Management</h3>
+<p><strong>Browse & Navigate</strong></p>
+<ul>
+<li>Intuitive folder navigation with breadcrumb trails</li>
+<li>List and grid view modes for flexible browsing</li>
+<li>Powerful search functionality across all documents</li>
+<li>Sort by name, date modified, or file size</li>
+</ul>
+<p><strong>File Operations</strong></p>
+<ul>
+<li>Download documents with format conversion (DOCX, XLSX, PPTX, PDF)</li>
+<li>Upload files to Google Drive</li>
+<li>Rename, move, copy, and delete documents</li>
+<li>Star important files for quick access</li>
+<li>Batch operations for multiple files</li>
+</ul>
+</div>
+
+<div class="feature-card">
+<h3>🔄 Advanced Download Manager</h3>
+<p><strong>Smart Download System</strong></p>
+<ul>
+<li>Queue-based download management</li>
+<li>Automatic format conversion for Google Workspace files</li>
+<li>Export Google Docs to DOCX, PDF, or other formats</li>
+<li>Export Google Sheets to XLSX or CSV</li>
+<li>Export Google Slides to PPTX or PDF</li>
+<li>Real-time progress tracking with speed indicators</li>
+<li>Pause, resume, and cancel downloads</li>
+</ul>
+</div>
+</div>
+
+<div class="feature-grid">
+<div class="feature-card">
+<h3>⬆️ Powerful Upload Manager</h3>
+<p><strong>Efficient Upload System</strong></p>
+<ul>
+<li>Upload files and folders to Google Drive</li>
+<li>Queue-based upload management with progress tracking</li>
+<li>Maintain folder structure during uploads</li>
+<li>Real-time upload speed and time remaining</li>
+<li>Automatic retry for failed uploads</li>
+</ul>
+</div>
+
+<div class="feature-card">
+<h3>🔍 Ownership Filter</h3>
+<p><strong>Smart File Filtering</strong></p>
+<ul>
+<li>View files owned by you</li>
+<li>View files shared with you by others</li>
+<li>View all files regardless of ownership</li>
+<li>Quickly identify document ownership</li>
+</ul>
+</div>
+
+<div class="feature-card">
+<h3>📝 Built-in Document Viewer</h3>
+<p><strong>Native Editing Experience</strong></p>
+<ul>
+<li>Open Google Docs directly within the app</li>
+<li>Edit documents without leaving the application</li>
+<li>Full Google Docs editing capabilities</li>
+<li>Seamless integration with Google's web editor</li>
+</ul>
+</div>
+</div>
+
+<div class="feature-grid">
+<div class="feature-card">
+<h3>👥 Multi-Account Support</h3>
+<p><strong>Manage Multiple Google Accounts</strong></p>
+<ul>
+<li>Add and switch between multiple Google accounts</li>
+<li>Independent file management for each account</li>
+<li>Secure token storage for each account</li>
+<li>Quick account switching without re-authentication</li>
+</ul>
+</div>
+
+<div class="feature-card">
+<h3>🎨 Beautiful Native Interface</h3>
+<p><strong>Designed for macOS</strong></p>
+<ul>
+<li>Clean, modern interface following macOS design guidelines</li>
+<li>Full Dark Mode support</li>
+<li>Responsive layout for all screen sizes</li>
+<li>Smooth animations and transitions</li>
+<li>Native macOS experience</li>
+</ul>
+</div>
+
+<div class="feature-card">
+<h3>🔒 Security & Privacy</h3>
+<p><strong>Your Data, Your Control</strong></p>
+<ul>
+<li>Secure OAuth 2.0 authentication</li>
+<li>No data stored on our servers</li>
+<li>All operations performed directly with Google Drive</li>
+<li>Automatic token refresh for uninterrupted access</li>
+</ul>
+</div>
+</div>
+
+<hr/>
+
+<h2>How It Works</h2>
+<div class="steps-container">
+<div class="step-card">
+<h3>1. Connect Your Account</h3>
+<p>Sign in with your Google account using secure OAuth 2.0 authentication. Quick Access for Sheets never stores your password.</p>
+</div>
+<div class="step-card">
+<h3>2. Browse Your Documents</h3>
+<p>Navigate through your Google Docs, Sheets, Slides, Forms, and Drawings with an intuitive categorized interface.</p>
+</div>
+<div class="step-card">
+<h3>3. Manage Your Files</h3>
+<p>Download, upload, organize, and edit your documents with powerful tools and seamless Google integration.</p>
+</div>
+<div class="step-card">
+<h3>4. Work Efficiently</h3>
+<p>Open documents directly in the app, track download/upload progress, and manage multiple accounts effortlessly.</p>
+</div>
+</div>
+
+<hr/>
+
+<div class="callout">
+<h2>System Requirements</h2>
+<ul>
+<li>macOS 12.0 (Monterey) or later</li>
+<li>Active internet connection</li>
+<li>Google account with Google Drive access</li>
+</ul>
+</div>
+
+<hr/>
+
+<div class="cta-section">
+<h2>Getting Started</h2>
+<ol>
+<li><strong>Download Quick Access for Sheets</strong> from the Mac App Store</li>
+<li><strong>Launch the application</strong> and sign in with your Google account</li>
+<li><strong>Grant permissions</strong> to access your Google Drive</li>
+<li><strong>Start managing</strong> your Google documents with ease</li>
+</ol>
+</div>
+
+<hr/>
+
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq-item">
+<h3>1. What types of files does Quick Access for Sheets support?</h3>
+<p>Quick Access for Sheets is specifically designed for Google Workspace documents including Google Docs, Google Sheets, Google Slides, Google Forms, and Google Drawings. You can also browse and manage files in your My Drive folder.</p>
+</div>
+
+<div class="faq-item">
+<h3>2. Is my data safe?</h3>
+<p>Absolutely. Quick Access for Sheets uses Google's official OAuth 2.0 authentication and communicates directly with Google Drive APIs. We never store your credentials or access your data on our servers.</p>
+</div>
+
+<div class="faq-item">
+<h3>3. Can I edit documents within the app?</h3>
+<p>Yes! Quick Access for Sheets includes a built-in document viewer that allows you to open and edit Google Docs, Sheets, and Slides directly within the application using Google's web editor.</p>
+</div>
+
+<div class="faq-item">
+<h3>4. How many accounts can I add?</h3>
+<p>You can add and manage multiple Google accounts, switching between them seamlessly within the app.</p>
+</div>
+
+<div class="faq-item">
+<h3>5. What formats can I export documents to?</h3>
+<p>Google Docs can be exported to DOCX or PDF. Google Sheets can be exported to XLSX or CSV. Google Slides can be exported to PPTX or PDF. Google Forms export to PDF, and Google Drawings export to PNG.</p>
+</div>
+
+<div class="faq-item">
+<h3>6. Can I use Quick Access for Sheets offline?</h3>
+<p>Quick Access for Sheets requires an internet connection to access your Google Drive documents. However, downloaded files are available offline on your Mac.</p>
+</div>
+
+<div class="faq-item">
+<h3>7. What is the Ownership Filter?</h3>
+<p>The Ownership Filter allows you to quickly filter documents by ownership - view only files you own, only files shared with you by others, or all files regardless of ownership.</p>
+</div>
+
+<hr/>
+
+<div class="support-box" id="supportSection">
+<h2>Support</h2>
+<p>Need help? Have questions or feedback?</p>
+<p><strong>Email</strong>: <a href="mailto:shieldapps.feedback@gmail.com">shieldapps.feedback@gmail.com</a></p>
+</div>
+
+<hr/>
+
+<div class="disclaimer-box">
+<h2>DISCLAIMER</h2>
+<p><strong>This is an independent third-party application developed using the official Google Drive APIs. It is not affiliated with, endorsed by, or produced by Google LLC.</strong></p>
+<p>"Google Drive," "Google Docs," "Google Sheets," "Google Slides," and all associated trademarks, service marks, logos, and trade names are the property of Google LLC. All other trademarks are the property of their respective owners.</p>
+<p>Quick Access for Sheets is an independent software application that provides enhanced document management capabilities for Google Drive through the use of publicly available Google Drive APIs. The use of Google's trademarks is for descriptive purposes only to indicate compatibility and functionality.</p>
+</div>
+
+<hr/>
+
+<div class="footer-section">
+<p>© 2025 Shield Apps. All rights reserved.</p>
+<p style="margin-top: 15px; font-size: 0.9em;"><a href="https://www.shieldapps.top/quickaccessfordocs/privacy" style="color: #3677EA; text-decoration: none; margin: 0 10px;">Privacy Policy</a> | <a href="https://www.shieldapps.top/quickaccessfordocs/terms" style="color: #3677EA; text-decoration: none; margin: 0 10px;">Terms of Service</a></p>
+</div>
+
+</div></article>
+
+<script>
+// Fixed header functionality
+window.addEventListener('scroll', function() {
+	const fixedHeader = document.getElementById('fixedHeader');
+	const heroSection = document.querySelector('.hero-section');
+
+	if (heroSection) {
+		const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+
+		if (window.scrollY > heroBottom) {
+			fixedHeader.classList.add('visible');
+		} else {
+			fixedHeader.classList.remove('visible');
+		}
+	}
+});
+
+// Scroll to support section
+function scrollToSupport() {
+	const supportBox = document.getElementById('supportSection');
+	if (supportBox) {
+		const headerHeight = 80;
+		const elementPosition = supportBox.getBoundingClientRect().top;
+		const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20;
+
+		window.scrollTo({
+			top: offsetPosition,
+			behavior: 'smooth'
+		});
+	}
+}
+</script>
+
+</body></html>

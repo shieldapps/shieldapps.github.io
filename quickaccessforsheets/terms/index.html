@@ -1,0 +1,708 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Quick Access for Sheets - Terms &amp; Conditions</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="29f2cb83-76c6-8069-80b3-e294bc7f3cfe" class="page sans"><header><h1 class="page-title">Quick Access for Sheets - <strong>Terms &amp; Conditions</strong></h1><p class="page-description"></p></header><div class="page-body"><p id="29f2cb83-76c6-80f0-a161-d39ca9b1d1c8" class=""><strong>DISCLAIMER</strong></p><p id="2a52cb83-76c6-80d7-a2a3-f7770452eef9" class="">This is an independent third-party application developed using the official Google Drive APIs. It is not affiliated with, endorsed by, or produced by Google. &quot;Google Drive&quot; and all associated trademarks, service marks, logos, and trade names are the property of Google LLC.</p><p id="2a52cb83-76c6-80ec-8914-f987692464da" class="">
+</p><p id="29f2cb83-76c6-8008-a5b0-c31e5b048cf9" class="">Welcome to Quick Access for Sheets. These Terms &amp; Conditions govern your use of the Quick Access for Sheets application (the &quot;App&quot;), which is offered by Shield Apps (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;). By downloading, installing, or using this App, you agree to be bound by these terms. If you do not agree with our terms, please do not use our App.</p><p id="developer-info-terms" class=""><strong>Developer Information:</strong><br/>Shield Apps<br/>Email: <a href="mailto:shieldapps.feedback@gmail.com">shieldapps.feedback@gmail.com</a></p><p id="29f2cb83-76c6-8030-a348-c0df661b9888" class=""><strong>1. Acceptance of Terms</strong></p><ul id="acceptance" class="bulleted-list"><li style="list-style-type:disc">By accessing or using Quick Access for Sheets, you agree to be bound by these Terms &amp; Conditions and our Privacy Policy.</li><li style="list-style-type:disc">If you do not agree to these terms, you must not use the App.</li><li style="list-style-type:disc">You must have a valid Google account and meet Google's age requirements to use this App.</li></ul><p id="29f2cb83-76c6-8030-a348-c0df661b9888-2" class=""><strong>2. Use License</strong></p><ul id="29f2cb83-76c6-80d7-bd22-e9ed07f1e5da" class="bulleted-list"><li style="list-style-type:disc">Subject to your compliance with these Terms, we grant you a non-exclusive, non-transferable, revocable license to download, install and use the App for your personal and non-commercial use strictly in accordance with the App&#x27;s documentation.</li><li style="list-style-type:disc">This license does not grant you any rights to use Shield Apps' trademarks or branding.</li></ul><p id="29f2cb83-76c6-8005-bb5f-dbc107faa8b1" class=""><strong>3. Intellectual Property Rights</strong></p><ul id="29f2cb83-76c6-80f7-87f4-f98bacb4eddb" class="bulleted-list"><li style="list-style-type:disc">All copyrights, trademarks, logos, and any other intellectual property rights associated with the App and its contents are the sole property of Shield Apps, unless otherwise noted.</li><li style="list-style-type:disc">Any unauthorized use of the content or the App is strictly prohibited and may lead to legal action.</li><li style="list-style-type:disc">Your Google Drive files and data remain your property. We claim no ownership rights over your content.</li></ul><p id="29f2cb83-76c6-80c3-9f38-e135f865c5d9" class=""><strong>4. Google Account Authorization</strong></p><ul id="google-auth" class="bulleted-list"><li style="list-style-type:disc">Quick Access for Sheets requires authorization to access your Google Drive through Google's OAuth 2.0 authentication.</li><li style="list-style-type:disc">By authorizing Quick Access for Sheets, you grant us permission to access your Google Drive files as described in our Privacy Policy.</li><li style="list-style-type:disc">You can revoke this authorization at any time through your Google Account settings.</li><li style="list-style-type:disc">You are responsible for maintaining the security of your Google account credentials.</li></ul><p id="29f2cb83-76c6-80c3-9f38-e135f865c5d9-2" class=""><strong>5. User Accounts and Subscription</strong></p><ul id="29f2cb83-76c6-8062-a7ae-c8d38e672565" class="bulleted-list"><li style="list-style-type:disc">While the App can be downloaded free of charge, some features may require an in-app purchase or subscription. Details about the cost and benefits of such purchases or subscriptions will be available within the App.</li></ul><ul id="29f2cb83-76c6-8095-ab89-c42ed2f6df27" class="bulleted-list"><li style="list-style-type:disc">You are responsible for maintaining the confidentiality of any login information associated with any account you use to access our resources and thus you are responsible for all activities that occur under your account/s.</li></ul><p id="29f2cb83-76c6-8036-a4a3-d36931d133a7" class=""><strong>6. User Data and Privacy</strong></p><ul id="29f2cb83-76c6-807a-9a50-e653b1a952cb" class="bulleted-list"><li style="list-style-type:disc">Quick Access for Sheets does not collect, store, or transmit your personal data or Google Drive files to our servers.</li><li style="list-style-type:disc">All data is stored locally on your device or in your Google Drive account.</li><li style="list-style-type:disc">We comply with Google API Services User Data Policy, including the Limited Use requirements.</li><li style="list-style-type:disc">For complete details on how we handle your data, please review our Privacy Policy.</li></ul><ul id="29f2cb83-76c6-805d-9f38-edb7d8b665f8" class="bulleted-list"><li style="list-style-type:disc">We respect your privacy and are committed to protecting it through our compliance with the practices described in these terms and our Privacy Policy.</li></ul><p id="29f2cb83-76c6-80d1-ad97-c4ad7d60dd77" class=""><strong>7. Modifications to App</strong></p><ul id="29f2cb83-76c6-80d5-b5da-dacabc765264" class="bulleted-list"><li style="list-style-type:disc">Shield Apps reserves the right at any time to modify or discontinue, temporarily or permanently, the App (or any part thereof) with or without notice.</li><li style="list-style-type:disc">We are committed to ensuring the continuity of services wherever possible.</li><li style="list-style-type:disc">We are not liable to you or any third party for any modification, suspension, or discontinuance of the App.</li></ul><p id="29f2cb83-76c6-8044-b0ca-ffaac9a192a8" class=""><strong>8. Acceptable Use</strong></p><ul id="29f2cb83-76c6-80ba-85c8-dfa2c9abdb58" class="bulleted-list"><li style="list-style-type:disc">You agree not to use the App for any unlawful purpose or in violation of these Terms.</li><li style="list-style-type:disc">You may not use the App to violate Google's Terms of Service or Google Drive's Acceptable Use Policy.</li><li style="list-style-type:disc">You may not attempt to reverse engineer, decompile, or disassemble the App.</li><li style="list-style-type:disc">You may not use the App in any manner that could damage, disable, overburden, or impair the App or interfere with any other party&#x27;s use.</li><li style="list-style-type:disc">You are solely responsible for your use of the App and any content you upload or manage through it.</li></ul><p id="29f2cb83-76c6-80ba-9ba6-c73a4423be7d" class=""><strong>9. Limitation of Liability</strong></p><ul id="liability" class="bulleted-list"><li style="list-style-type:disc">Quick Access for Sheets is provided "as is" without warranties of any kind, either express or implied.</li><li style="list-style-type:disc">We do not guarantee that the App will be error-free, secure, or uninterrupted.</li><li style="list-style-type:disc">Shield Apps shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use the App.</li><li style="list-style-type:disc">We are not responsible for any loss of data, though we recommend maintaining backups of important files.</li><li style="list-style-type:disc">Your use of the App is at your own risk.</li></ul><p id="29f2cb83-76c6-80ba-9ba6-c73a4423be7d-2" class=""><strong>10. Termination</strong></p><ul id="29f2cb83-76c6-807b-a821-f0338d2f5d0c" class="bulleted-list"><li style="list-style-type:disc">We may terminate or suspend your access to the App immediately, without prior notice or liability, for any reason, including if you breach these Terms.</li><li style="list-style-type:disc">You may terminate your use of the App at any time by uninstalling it and revoking its access through your Google Account settings.</li><li style="list-style-type:disc">Upon termination, your right to use the App will immediately cease.</li><li style="list-style-type:disc">Termination does not affect your Google Drive files, which remain in your Google account.</li></ul><p id="29f2cb83-76c6-80f1-ba13-d36a9353542f" class=""><strong>11. Governing Law</strong></p><ul id="29f2cb83-76c6-809d-ac29-d23b402d5418" class="bulleted-list"><li style="list-style-type:disc">These Terms shall be governed by and construed in accordance with the laws of Hong Kong Special Administrative Region, without giving effect to any principles of conflicts of law.</li><li style="list-style-type:disc">Any disputes arising from these Terms or your use of the App shall be subject to the exclusive jurisdiction of the courts of Hong Kong.</li></ul><p id="29f2cb83-76c6-803b-bf0b-c7ec5a899061" class=""><strong>12. Changes to Terms</strong></p><ul id="29f2cb83-76c6-80bc-a206-d5f16fb7927c" class="bulleted-list"><li style="list-style-type:disc">Shield Apps reserves the right, at our sole discretion, to change, modify, add or remove portions of these Terms at any time.</li><li style="list-style-type:disc">We will notify you of material changes by updating the "Last Updated" date at the bottom of these Terms.</li><li style="list-style-type:disc">It is your responsibility to check these Terms periodically for changes.</li><li style="list-style-type:disc">Your continued use of the App following the posting of changes constitutes your acceptance of those changes.</li></ul><p id="29f2cb83-76c6-801c-8d91-c9f2b83d4fc6" class=""><strong>Contact Us</strong></p><ul id="29f2cb83-76c6-80fd-9e54-cbe125f713cd" class="bulleted-list"><li style="list-style-type:disc">If you have any questions about these Terms, please contact us at <a href="mailto:shieldapps.feedback@gmail.com">shieldapps.feedback@gmail.com</a>.</li></ul><p id="29f2cb83-76c6-80fe-9557-ebf18ac1bfec" class="">By using the Quick Access for Sheets app, you acknowledge that you have read these terms and agree to be bound by them.</p><p id="29f2cb83-76c6-8052-bb82-fbdb64bdef2f" class=""><strong>Effective date: 2025.11.02</strong></p><p id="29f2cb83-76c6-8054-a6cb-cf497a2b628c" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

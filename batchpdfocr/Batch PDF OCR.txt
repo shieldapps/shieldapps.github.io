@@ -1,0 +1,58 @@
+Batch PDF OCR
+https://apps.apple.com/us/app/id6752823571
+
+
+Batch PDF OCR - Fast & Accurate
+
+Turn your PDFs and images into editable text in seconds
+
+Extract text from multiple documents at once with our powerful OCR engine. Perfect for digitizing receipts, contracts, books, and any printed material.
+
+Key Features
+
+Batch Processing Made Easy
+- Process multiple PDFs and images simultaneously  
+- Import entire folders with one tap
+- Drag and drop support on Mac
+
+Universal Format Support
+- PDFs, JPG, PNG, HEIC, HEIF, BMP, GIF, TIFF
+- Handle any document or photo with text
+
+Smart Language Detection
+- Auto-detect text language
+- Support for 15+ languages including English, Chinese, Spanish, French, German, Japanese, Korean, Arabic, and more
+
+Flexible & Precise
+- Choose all pages or specific ranges (1-10, 2,4,5)
+- Preview pages before processing
+- Navigate through documents easily
+
+Export Your Way
+- Save as editable text files (.txt)
+- Create searchable PDF documents
+- Copy text directly to clipboard
+
+Private & Secure
+- All processing happens locally on your device
+- No internet connection required
+- Your documents never leave your device
+
+Simple Pricing
+
+Free: 1 OCR session per day
+Pro: $0.99 one-time payment unlocks everything
+
+• Permanent License, One-time Purchase
+• Upgrade once, enjoy all features forever
+• 100% Free updates
+• Quick technical and customer support
+• Works on iPhone, iPad, and Mac
+
+Perfect For:
+- Students digitizing textbooks and notes
+- Professionals processing contracts and documents  
+- Researchers extracting text from papers
+- Anyone who needs to make printed text editable
+
+Download now and transform your documents into editable text!

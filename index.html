@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shield Apps - Professional macOS Security & Utility Apps</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .apps-section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 60px;
+            color: #1d1d1f;
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .app-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 18px;
+            margin-bottom: 25px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .app-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .app-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #1d1d1f;
+        }
+
+        .app-card p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .app-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .app-features li {
+            padding: 8px 0;
+            color: #555;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .app-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .app-screenshots {
+            margin: 25px 0;
+            overflow: hidden;
+        }
+
+        .screenshot-gallery {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 10px 0;
+            scrollbar-width: thin;
+            scrollbar-color: #667eea #f0f0f0;
+        }
+
+        .screenshot-gallery::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .screenshot-gallery::-webkit-scrollbar-track {
+            background: #f0f0f0;
+            border-radius: 10px;
+        }
+
+        .screenshot-gallery::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 10px;
+        }
+
+        .screenshot-gallery::-webkit-scrollbar-thumb:hover {
+            background: #5568d3;
+        }
+
+        .screenshot-item {
+            flex: 0 0 auto;
+            width: 280px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .screenshot-item:hover {
+            transform: scale(1.05);
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .view-screenshots-btn {
+            display: inline-block;
+            color: #667eea;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .view-screenshots-btn:hover {
+            color: #5568d3;
+        }
+
+        .screenshots-hidden {
+            display: none;
+        }
+
+        .app-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-section {
+            background: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #1d1d1f;
+        }
+
+        .contact-section p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .email-link {
+            display: inline-block;
+            font-size: 1.3rem;
+            color: #667eea;
+            text-decoration: none;
+            padding: 15px 40px;
+            border: 2px solid #667eea;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .email-link:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        footer {
+            background: #1d1d1f;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header p {
+                font-size: 1.1rem;
+            }
+
+            .apps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .screenshot-item {
+                width: 220px;
+            }
+
+            .app-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .download-btn, .view-screenshots-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+    <script>
+        function toggleScreenshots(appId) {
+            const screenshots = document.getElementById(appId + '-screenshots');
+            const btn = document.getElementById(appId + '-btn');
+            
+            if (screenshots.classList.contains('screenshots-hidden')) {
+                screenshots.classList.remove('screenshots-hidden');
+                btn.textContent = '▲ Hide Screenshots';
+            } else {
+                screenshots.classList.add('screenshots-hidden');
+                btn.textContent = '▼ View Screenshots';
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Shield Apps</h1>
+            <p>Professional macOS App Developer<br>Powerful, Secure, and Easy-to-Use Solutions for Your Mac</p>
+        </div>
+    </header>
+
+    <section class="apps-section">
+        <div class="container">
+            <h2 class="section-title">Our Apps</h2>
+            
+            <div class="apps-grid">
+
+                <!-- Authenticator App -->
+                <div class="app-card">
+                    <div class="app-icon">
+                        <img src="authenticator/icon.png" alt="Authenticator App Icon">
+                    </div>
+                    <h3>Authenticator App</h3>
+                    <p>Secure and easy 2FA management. Generate two-factor authentication codes effortlessly on your Mac.</p>
+                    <ul class="app-features">
+                        <li>256-bit encryption, local storage</li>
+                        <li>Seamless iCloud sync across devices</li>
+                        <li>Supports thousands of services</li>
+                        <li>One-click Google Authenticator import</li>
+                        <li>Pay once, use forever</li>
+                    </ul>
+                    <a href="javascript:void(0)" id="authenticator-btn" class="view-screenshots-btn" onclick="toggleScreenshots('authenticator')">▼ View Screenshots</a>
+                    <div id="authenticator-screenshots" class="app-screenshots screenshots-hidden">
+                        <div class="screenshot-gallery">
+                            <div class="screenshot-item"><img src="authenticator/Mac_1.png" alt="Screenshot 1"></div>
+                            <div class="screenshot-item"><img src="authenticator/Mac_2.png" alt="Screenshot 2"></div>
+                            <div class="screenshot-item"><img src="authenticator/Mac_3.png" alt="Screenshot 3"></div>
+                            <div class="screenshot-item"><img src="authenticator/Mac_4.png" alt="Screenshot 4"></div>
+                            <div class="screenshot-item"><img src="authenticator/Mac_5.png" alt="Screenshot 5"></div>
+                            <div class="screenshot-item"><img src="authenticator/Mac_6.png" alt="Screenshot 6"></div>
+                            <div class="screenshot-item"><img src="authenticator/Mac_7.png" alt="Screenshot 7"></div>
+                            <div class="screenshot-item"><img src="authenticator/Mac_8.png" alt="Screenshot 8"></div>
+                        </div>
+                    </div>
+                    <a href="https://apps.apple.com/us/app/id6444312209" class="download-btn" target="_blank">Download on App Store</a>
+                </div>
+
+                <!-- Batch PDF OCR -->
+                <div class="app-card">
+                    <div class="app-icon">
+                        <img src="batchpdfocr/images/icon.png" alt="Batch PDF OCR Icon">
+                    </div>
+                    <h3>Batch PDF OCR</h3>
+                    <p>Turn your PDFs and images into editable text in seconds. Extract text from multiple documents at once with our powerful OCR engine.</p>
+                    <ul class="app-features">
+                        <li>Process multiple PDFs and images simultaneously</li>
+                        <li>Support for 15+ languages with auto-detection</li>
+                        <li>Export as text files or searchable PDFs</li>
+                        <li>100% local processing, privacy first</li>
+                        <li>Works on iPhone, iPad, and Mac</li>
+                    </ul>
+                    <a href="javascript:void(0)" id="batchpdfocr-btn" class="view-screenshots-btn" onclick="toggleScreenshots('batchpdfocr')">▼ View Screenshots</a>
+                    <div id="batchpdfocr-screenshots" class="app-screenshots screenshots-hidden">
+                        <div class="screenshot-gallery">
+                            <div class="screenshot-item"><img src="batchpdfocr/images/Mac_1.png" alt="Screenshot 1"></div>
+                            <div class="screenshot-item"><img src="batchpdfocr/images/Mac_2.png" alt="Screenshot 2"></div>
+                        </div>
+                    </div>
+                    <a href="https://apps.apple.com/us/app/id6752823571" class="download-btn" target="_blank">Download on App Store</a>
+                </div>
+
+                <!-- Copy Text On Screen -->
+                <div class="app-card">
+                    <div class="app-icon">
+                        <img src="copytextonscreen/icon.png" alt="Copy Text On Screen Icon">
+                    </div>
+                    <h3>Copy Text On Screen</h3>
+                    <p>Powerful OCR text recognition. Extract text instantly from images, screenshots, and documents.</p>
+                    <ul class="app-features">
+                        <li>Multiple recognition methods: camera, photos, screenshots</li>
+                        <li>Instant translation for 100+ languages</li>
+                        <li>Batch processing up to 9 images</li>
+                        <li>100% local processing, privacy first</li>
+                        <li>Menu bar quick access</li>
+                    </ul>
+                    <a href="javascript:void(0)" id="copytextonscreen-btn" class="view-screenshots-btn" onclick="toggleScreenshots('copytextonscreen')">▼ View Screenshots</a>
+                    <div id="copytextonscreen-screenshots" class="app-screenshots screenshots-hidden">
+                        <div class="screenshot-gallery">
+                            <div class="screenshot-item"><img src="copytextonscreen/Mac_1.png" alt="Screenshot 1"></div>
+                            <div class="screenshot-item"><img src="copytextonscreen/Mac_2.png" alt="Screenshot 2"></div>
+                            <div class="screenshot-item"><img src="copytextonscreen/Mac_3.png" alt="Screenshot 3"></div>
+                            <div class="screenshot-item"><img src="copytextonscreen/Mac_4.png" alt="Screenshot 4"></div>
+                            <div class="screenshot-item"><img src="copytextonscreen/Mac_5.png" alt="Screenshot 5"></div>
+                            <div class="screenshot-item"><img src="copytextonscreen/Mac_6.png" alt="Screenshot 6"></div>
+                        </div>
+                    </div>
+                    <a href="https://apps.apple.com/us/app/id6476453001" class="download-btn" target="_blank">Download on App Store</a>
+                </div>
+
+                <!-- File Vault -->
+                <div class="app-card">
+                    <div class="app-icon">
+                        <img src="filevault/icon.png" alt="File Vault Icon">
+                    </div>
+                    <h3>File Vault</h3>
+                    <p>Real encryption, not just hiding. Bank-level security to protect your files with military-grade encryption.</p>
+                    <ul class="app-features">
+                        <li>Military-grade encryption protection</li>
+                        <li>Supports all file types</li>
+                        <li>Unlimited storage capacity</li>
+                        <li>Touch ID / Face ID quick unlock</li>
+                        <li>100% local storage, never uploaded</li>
+                    </ul>
+                    <a href="javascript:void(0)" id="filevault-btn" class="view-screenshots-btn" onclick="toggleScreenshots('filevault')">▼ View Screenshots</a>
+                    <div id="filevault-screenshots" class="app-screenshots screenshots-hidden">
+                        <div class="screenshot-gallery">
+                            <div class="screenshot-item"><img src="filevault/Mac_1.png" alt="Screenshot 1"></div>
+                            <div class="screenshot-item"><img src="filevault/Mac_2.png" alt="Screenshot 2"></div>
+                            <div class="screenshot-item"><img src="filevault/Mac_3.png" alt="Screenshot 3"></div>
+                            <div class="screenshot-item"><img src="filevault/Mac_4.png" alt="Screenshot 4"></div>
+                            <div class="screenshot-item"><img src="filevault/Mac_5.png" alt="Screenshot 5"></div>
+                            <div class="screenshot-item"><img src="filevault/Mac_6.png" alt="Screenshot 6"></div>
+                            <div class="screenshot-item"><img src="filevault/Mac_7.png" alt="Screenshot 7"></div>
+                            <div class="screenshot-item"><img src="filevault/Mac_8.png" alt="Screenshot 8"></div>
+                        </div>
+                    </div>
+                    <a href="https://apps.apple.com/us/app/id6746962777" class="download-btn" target="_blank">Download on App Store</a>
+                </div>
+
+                <!-- QR Code Generator -->
+                <div class="app-card">
+                    <div class="app-icon">
+                        <img src="qrcodegenerator/icon.png" alt="QR Code Generator Icon">
+                    </div>
+                    <h3>QR Code Generator</h3>
+                    <p>Create beautiful, professional QR codes with custom styles, batch generation, and professional printing.</p>
+                    <ul class="app-features">
+                        <li>100+ style combinations</li>
+                        <li>Custom colors, logos, and fonts</li>
+                        <li>Batch generation (CSV/Excel)</li>
+                        <li>15 print layout options</li>
+                        <li>50+ platform integrations</li>
+                    </ul>
+                    <a href="javascript:void(0)" id="qrcodegenerator-btn" class="view-screenshots-btn" onclick="toggleScreenshots('qrcodegenerator')">▼ View Screenshots</a>
+                    <div id="qrcodegenerator-screenshots" class="app-screenshots screenshots-hidden">
+                        <div class="screenshot-gallery">
+                            <div class="screenshot-item"><img src="qrcodegenerator/Mac_1.png" alt="Screenshot 1"></div>
+                            <div class="screenshot-item"><img src="qrcodegenerator/Mac_2.png" alt="Screenshot 2"></div>
+                            <div class="screenshot-item"><img src="qrcodegenerator/Mac_3.png" alt="Screenshot 3"></div>
+                            <div class="screenshot-item"><img src="qrcodegenerator/Mac_4.png" alt="Screenshot 4"></div>
+                            <div class="screenshot-item"><img src="qrcodegenerator/Mac_5.png" alt="Screenshot 5"></div>
+                            <div class="screenshot-item"><img src="qrcodegenerator/Mac_6.png" alt="Screenshot 6"></div>
+                            <div class="screenshot-item"><img src="qrcodegenerator/Mac_7.png" alt="Screenshot 7"></div>
+                            <div class="screenshot-item"><img src="qrcodegenerator/Mac_8.png" alt="Screenshot 8"></div>
+                            <div class="screenshot-item"><img src="qrcodegenerator/Mac_9.png" alt="Screenshot 9"></div>
+                            <div class="screenshot-item"><img src="qrcodegenerator/Mac_10.png" alt="Screenshot 10"></div>
+                        </div>
+                    </div>
+                    <a href="https://apps.apple.com/us/app/id6749896568" class="download-btn" target="_blank">Download on App Store</a>
+                </div>
+
+                <!-- QR Code Scanner -->
+                <div class="app-card">
+                    <div class="app-icon">
+                        <img src="qrcodescanner/icon.png" alt="QR Code Scanner Icon">
+                    </div>
+                    <h3>QR Code Scanner</h3>
+                    <p>Professional QR and barcode scanner with custom QR code creation. Dual-engine technology for 99%+ accuracy.</p>
+                    <ul class="app-features">
+                        <li>Dual-engine scanning, 99%+ accuracy</li>
+                        <li>All code types (QR, UPC, EAN, etc.)</li>
+                        <li>Multiple scan methods: camera, photos, screen capture</li>
+                        <li>Custom designer with 1,000+ brand icons</li>
+                        <li>Batch processing multiple images</li>
+                    </ul>
+                    <a href="javascript:void(0)" id="qrcodescanner-btn" class="view-screenshots-btn" onclick="toggleScreenshots('qrcodescanner')">▼ View Screenshots</a>
+                    <div id="qrcodescanner-screenshots" class="app-screenshots screenshots-hidden">
+                        <div class="screenshot-gallery">
+                            <div class="screenshot-item"><img src="qrcodescanner/Mac_1.png" alt="Screenshot 1"></div>
+                            <div class="screenshot-item"><img src="qrcodescanner/Mac_2.png" alt="Screenshot 2"></div>
+                            <div class="screenshot-item"><img src="qrcodescanner/Mac_3.png" alt="Screenshot 3"></div>
+                            <div class="screenshot-item"><img src="qrcodescanner/Mac_4.png" alt="Screenshot 4"></div>
+                            <div class="screenshot-item"><img src="qrcodescanner/Mac_5.png" alt="Screenshot 5"></div>
+                            <div class="screenshot-item"><img src="qrcodescanner/Mac_6.png" alt="Screenshot 6"></div>
+                            <div class="screenshot-item"><img src="qrcodescanner/Mac_7.png" alt="Screenshot 7"></div>
+                            <div class="screenshot-item"><img src="qrcodescanner/Mac_8.png" alt="Screenshot 8"></div>
+                        </div>
+                    </div>
+                    <a href="https://apps.apple.com/en/app/id6502285859?platform=mac" class="download-btn" target="_blank">Download on App Store</a>
+                </div>
+
+                <!-- Quick Access for Dropbox -->
+                <div class="app-card">
+                    <div class="app-icon">
+                        <img src="quickaccessfordropbox/images/icon.png" alt="Quick Access for Dropbox Icon">
+                    </div>
+                    <h3>Quick Access for Dropbox</h3>
+                    <p>Professional Dropbox file management for macOS. Browse, upload, download, organize, and share your files with native Mac experience.</p>
+                    <ul class="app-features">
+                        <li>Native macOS experience with dual view modes</li>
+                        <li>Powerful file operations: upload, download, move, copy</li>
+                        <li>Batch operations on multiple files</li>
+                        <li>Lightning fast search and flexible sorting</li>
+                        <li>Generate sharing links instantly</li>
+                    </ul>
+                    <a href="javascript:void(0)" id="quickaccessfordropbox-btn" class="view-screenshots-btn" onclick="toggleScreenshots('quickaccessfordropbox')">▼ View Screenshots</a>
+                    <div id="quickaccessfordropbox-screenshots" class="app-screenshots screenshots-hidden">
+                        <div class="screenshot-gallery">
+                            <div class="screenshot-item"><img src="quickaccessfordropbox/images/Mac_1.png" alt="Screenshot 1"></div>
+                            <div class="screenshot-item"><img src="quickaccessfordropbox/images/Mac_2.png" alt="Screenshot 2"></div>
+                            <div class="screenshot-item"><img src="quickaccessfordropbox/images/Mac_3.png" alt="Screenshot 3"></div>
+                            <div class="screenshot-item"><img src="quickaccessfordropbox/images/Mac_4.png" alt="Screenshot 4"></div>
+                            <div class="screenshot-item"><img src="quickaccessfordropbox/images/Mac_5.png" alt="Screenshot 5"></div>
+                            <div class="screenshot-item"><img src="quickaccessfordropbox/images/Mac_6.png" alt="Screenshot 6"></div>
+                        </div>
+                    </div>
+                    <a href="https://apps.apple.com/us/app/id6754376846" class="download-btn" target="_blank">Download on App Store</a>
+                </div>
+
+                <!-- Quick Access for Google Drive -->
+                <div class="app-card">
+                    <div class="app-icon">
+                        <img src="quickaccess/images/1024-mac.png" alt="Quick Access for Google Drive Icon">
+                    </div>
+                    <h3>Quick Access for Google Drive</h3>
+                    <p>Professional Google Drive file management for macOS. Browse, upload, download, organize, and share your files with native Mac experience.</p>
+                    <ul class="app-features">
+                        <li>Native macOS experience with dual view modes</li>
+                        <li>Batch upload and download entire folders</li>
+                        <li>Powerful file operations: upload, download, move, copy</li>
+                        <li>Lightning fast search and flexible sorting</li>
+                        <li>Generate sharing links instantly</li>
+                    </ul>
+                    <a href="javascript:void(0)" id="quickaccess-btn" class="view-screenshots-btn" onclick="toggleScreenshots('quickaccess')">▼ View Screenshots</a>
+                    <div id="quickaccess-screenshots" class="app-screenshots screenshots-hidden">
+                        <div class="screenshot-gallery">
+                            <div class="screenshot-item"><img src="quickaccess/images/Mac_1.png" alt="Screenshot 1"></div>
+                            <div class="screenshot-item"><img src="quickaccess/images/Mac_2.png" alt="Screenshot 2"></div>
+                            <div class="screenshot-item"><img src="quickaccess/images/Mac_3.png" alt="Screenshot 3"></div>
+                            <div class="screenshot-item"><img src="quickaccess/images/Mac_4.png" alt="Screenshot 4"></div>
+                            <div class="screenshot-item"><img src="quickaccess/images/Mac_5.png" alt="Screenshot 5"></div>
+                            <div class="screenshot-item"><img src="quickaccess/images/Mac_6.png" alt="Screenshot 6"></div>
+                            <div class="screenshot-item"><img src="quickaccess/images/Mac_7.png" alt="Screenshot 7"></div>
+                            <div class="screenshot-item"><img src="quickaccess/images/Mac_8.png" alt="Screenshot 8"></div>
+                        </div>
+                    </div>
+                    <a href="https://apps.apple.com/us/app/id6754816629" class="download-btn" target="_blank">Download on App Store</a>
+                </div>
+
+                <!-- Smart Printer App -->
+                <div class="app-card">
+                    <div class="app-icon">
+                        <img src="smartprinter/icon.png" alt="Smart Printer App Icon">
+                    </div>
+                    <h3>Smart Printer App</h3>
+                    <p>All-in-one printing solution. Handle photos, PDFs, notes, and web pages effortlessly with AirPrint support.</p>
+                    <ul class="app-features">
+                        <li>Electronic signatures & stamps</li>
+                        <li>Professional PDF tools (OCR, merge, split)</li>
+                        <li>Multiple photo print layouts</li>
+                        <li>100+ global form templates</li>
+                        <li>Compatible with 10,000+ printers</li>
+                    </ul>
+                    <a href="javascript:void(0)" id="smartprinter-btn" class="view-screenshots-btn" onclick="toggleScreenshots('smartprinter')">▼ View Screenshots</a>
+                    <div id="smartprinter-screenshots" class="app-screenshots screenshots-hidden">
+                        <div class="screenshot-gallery">
+                            <div class="screenshot-item"><img src="smartprinter/Mac_1.png" alt="Screenshot 1"></div>
+                            <div class="screenshot-item"><img src="smartprinter/Mac_2.png" alt="Screenshot 2"></div>
+                            <div class="screenshot-item"><img src="smartprinter/Mac_3.png" alt="Screenshot 3"></div>
+                            <div class="screenshot-item"><img src="smartprinter/Mac_4.png" alt="Screenshot 4"></div>
+                            <div class="screenshot-item"><img src="smartprinter/Mac_5.png" alt="Screenshot 5"></div>
+                            <div class="screenshot-item"><img src="smartprinter/Mac_6.png" alt="Screenshot 6"></div>
+                            <div class="screenshot-item"><img src="smartprinter/Mac_7.png" alt="Screenshot 7"></div>
+                            <div class="screenshot-item"><img src="smartprinter/Mac_8.png" alt="Screenshot 8"></div>
+                        </div>
+                    </div>
+                    <a href="https://apps.apple.com/us/app/id6740662679" class="download-btn" target="_blank">Download on App Store</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Have questions or suggestions? We'd love to hear from you</p>
+            <a href="mailto:shieldapps.feedback@gmail.com" class="email-link">shieldapps.feedback@gmail.com</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Shield Apps. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

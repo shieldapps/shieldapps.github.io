@@ -1,0 +1,42 @@
+Copy Text On Screen
+https://apps.apple.com/us/app/id6476453001
+
+
+Copy Text On Screen - Powerful OCR Text Recognition
+
+Extract text from images instantly on Mac, iPad, and iPhone. Whether it's a screenshot, photo, or document, easily recognize and copy any non-selectable text content.
+
+Core Features:
+• Multiple Recognition Methods: Camera capture, photo library, clipboard, file picker, drag &amp; drop images, screenshot shortcuts
+• Mac Exclusive: Shortcut-based screenshot recognition, pin to menu bar, customizable keyboard shortcuts
+• Instant Translation: Support for 100+ languages with integrated Google Translate
+• Batch Processing: Recognize up to 9 images simultaneously
+• Privacy First: 100% local processing, no data uploaded to servers
+• Smart Editing: Crop images, adjust text size, history management
+
+Perfect For:
+Students organizing notes, business professionals processing documents, language learners translating content, anyone extracting text from social media
+
+Mac-Optimized Features:
+• Pin to menu bar for quick access
+• Configure keyboard shortcuts for faster text extraction
+• Seamless Finder integration
+• Drag and drop support
+
+Advanced Capabilities:
+• Image cropping for better recognition accuracy
+• Customizable result text size
+• Text concatenation options
+• Share and export as text files
+• Automatic history saving
+
+Support over 25 languages:
+- macOS Catalina: English only.
+- macOS Big Sur &amp; Monterey: English, Spanish, French, German, Portuguese, Italian, Chinese (Simplified &amp; Traditional).
+- macOS Ventura: All of the above, plus Japanese, Korean, Russian, Ukrainian.
+- macOS Sonoma: All of the above, plus Thai, Vietnamese.
+- macOS Sequoia: All of the above, plus Arabic, Najdi Arabic.
+- macOS Tahoe: All of the above, plus Turkish, Indonesian, Czech, Danish, Dutch, Norwegian, Malay, Polish, Romanian, Swedish.
+
+Privacy Policy: https://www.notion.so/bb2014abc512439f8172d18af84b5c95
+Terms of Use: https://www.notion.so/3463ddd4a2c5478b96ac5f6290ee6d5f
