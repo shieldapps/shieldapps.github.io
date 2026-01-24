@@ -1,0 +1,1025 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Quick Access for Google Drive - Professional Google Drive Manager for macOS</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+	scroll-behavior: smooth;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 0;
+		padding: 0.5rem;
+		max-width: 100%;
+		color: rgb(55, 53, 47);
+		background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+		height: fit-content;
+	}
+}
+
+body {
+	line-height: 1.6;
+	white-space: normal;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+a,
+a.visited {
+	color: #4A90E2;
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+a:hover {
+	color: #357ABD;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 3.5rem;
+	font-weight: 800;
+	margin-top: 0;
+	margin-bottom: 0.5em;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-align: center;
+}
+
+h1 {
+	font-size: 2rem;
+	margin-top: 2.5rem;
+	font-weight: 700;
+	color: #2c3e50;
+}
+
+h2 {
+	font-size: 2rem;
+	margin-top: 3rem;
+	margin-bottom: 1.5rem;
+	font-weight: 700;
+	color: #2c3e50;
+	border-bottom: 3px solid #667eea;
+	padding-bottom: 0.5rem;
+	display: inline-block;
+}
+
+h3 {
+	font-size: 1.4rem;
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+	font-weight: 600;
+	color: #34495e;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 12px;
+	padding: 1.5rem;
+	background: white;
+	box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 2px;
+	visibility: visible;
+	border: none;
+	border-bottom: 2px solid rgba(102, 126, 234, 0.2);
+	margin: 3rem 0;
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+/* Custom styles for better UI */
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem;
+	background: white;
+	box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+	border-radius: 20px;
+}
+
+
+.hero-section {
+	text-align: center;
+	padding: 3rem 2rem;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	border-radius: 20px;
+	margin-bottom: 3rem;
+	color: white;
+}
+
+.hero-section .page-title {
+	-webkit-text-fill-color: white;
+	color: white;
+	margin-bottom: 1rem;
+}
+
+.hero-section .page-description {
+	font-size: 1.25rem;
+	line-height: 1.8;
+	color: rgba(255,255,255,0.95);
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.feature-card {
+	background: white;
+	border-radius: 12px;
+	padding: 1.5rem;
+	margin-bottom: 1.5rem;
+	border: 2px solid #e1e8ed;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+}
+
+.feature-card h3 {
+	margin-top: 0;
+	color: #34495e;
+	filter: grayscale(100%);
+}
+
+.feature-card h3::first-letter {
+	filter: grayscale(0%);
+}
+
+.feature-grid {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	margin: 2rem 0;
+}
+
+.faq-item {
+	background: white;
+	border: 1px solid #e1e8ed;
+	border-radius: 10px;
+	padding: 1.5rem;
+	margin-bottom: 1rem;
+	transition: box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+	box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.faq-item h3 {
+	color: #667eea;
+	margin-top: 0;
+}
+
+.cta-section {
+	background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+	color: white;
+	padding: 3rem;
+	border-radius: 15px;
+	text-align: center;
+	margin: 3rem 0;
+}
+
+.cta-section h2 {
+	color: white;
+	border: none;
+	margin-top: 0;
+}
+
+.cta-section ol {
+	list-style-position: inside;
+	padding-left: 0;
+	text-align: left;
+	max-width: 600px;
+	margin: 2rem auto;
+}
+
+.cta-section ol li {
+	margin-bottom: 1rem;
+	padding-left: 0;
+}
+
+.steps-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 2rem;
+	margin: 2rem 0;
+}
+
+.step-card {
+	background: white;
+	border: 2px solid #667eea;
+	border-radius: 12px;
+	padding: 2rem;
+	text-align: left;
+	transition: transform 0.3s ease;
+}
+
+.step-card:hover {
+	transform: scale(1.05);
+}
+
+.step-card h3 {
+	margin-top: 0;
+	color: #667eea;
+}
+
+.step-card ol {
+	padding-inline-start: 1.2em;
+}
+
+.footer-section {
+	background: #2c3e50;
+	color: white;
+	padding: 2rem;
+	border-radius: 15px;
+	text-align: center;
+	margin-top: 3rem;
+}
+
+.footer-section a {
+	color: #667eea;
+}
+
+.disclaimer-box {
+	background: #fff3cd;
+	border: 2px solid #ffc107;
+	border-radius: 10px;
+	padding: 1.5rem;
+	margin: 2rem 0;
+}
+
+.support-box {
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	color: white;
+	padding: 2rem;
+	border-radius: 12px;
+	text-align: center;
+}
+
+.support-box h2,
+.support-box p {
+	color: white;
+}
+
+.support-box a {
+	color: white;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.support-box ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.support-box ul li {
+	list-style: none;
+}
+
+/* Fixed header navigation */
+.fixed-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: rgba(255, 255, 255, 0.95);
+	backdrop-filter: blur(10px);
+	box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+	z-index: 1000;
+	padding: 1rem 2rem;
+	display: none;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.fixed-header.visible {
+	display: flex;
+}
+
+.fixed-header-left {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.fixed-header-logo {
+	width: 40px;
+	height: 40px;
+	border-radius: 8px;
+}
+
+.fixed-header-name {
+	font-size: 1.25rem;
+	font-weight: 700;
+	color: #2c3e50;
+}
+
+.fixed-header-contact {
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	color: white;
+	padding: 0.5rem 1.5rem;
+	border-radius: 8px;
+	border: none;
+	cursor: pointer;
+	font-weight: 600;
+	transition: transform 0.2s ease;
+}
+
+.fixed-header-contact:hover {
+	transform: translateY(-2px);
+}
+
+body.has-fixed-header {
+	padding-top: 80px;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><div class="fixed-header" id="fixedHeader">
+	<div class="fixed-header-left">
+		<img src="images/1024-mac.png" alt="Quick Access for Google Drive" class="fixed-header-logo">
+		<span class="fixed-header-name">Quick Access for Google Drive</span>
+	</div>
+	<button class="fixed-header-contact" onclick="scrollToSupport()">Contact Us</button>
+</div>
+<article id="2ab2cb83-76c6-8071-a303-ca68a2845391" class="page sans"><div class="container"><header class="hero-section"><figure id="2ae2cb83-76c6-80ef-928c-fc2032489673" class="image" style="text-align:center;margin:0 0 2rem 0"><a href="images/1024-mac.png"><img style="width:180px" src="images/1024-mac.png"/></a></figure><h1 class="page-title">Quick Access for Google Drive</h1><p class="page-description">Your Professional Google Drive File Manager for macOS<br><br>A powerful, native macOS application designed to provide seamless and efficient management of your Google Drive files. With an intuitive interface and advanced features, Quick Access for Google Drive transforms how you interact with your cloud storage.</p></header><div class="page-body"></div><hr id="2ab2cb83-76c6-801d-b2b7-d7308b3381ab"/><h2 id="2ab2cb83-76c6-80f2-affe-fed5e359025e" class="">Key Features</h2><div class="feature-grid"><div class="feature-card"><h3 id="2ab2cb83-76c6-8031-9f02-e344884787cf" class="">📁 Comprehensive File Management</h3><p id="2ab2cb83-76c6-8080-922c-f87ef11bf405" class=""><strong>Browse &amp; Navigate</strong></p><ul id="2ab2cb83-76c6-80ce-a09a-ce42ab455bfe" class="bulleted-list"><li style="list-style-type:disc">Intuitive folder navigation with breadcrumb trails</li></ul><ul id="2ab2cb83-76c6-8088-aab7-ea6b2052b22a" class="bulleted-list"><li style="list-style-type:disc">List and grid view modes for flexible file browsing</li></ul><ul id="2ab2cb83-76c6-80e2-b988-d46f0ab9d74d" class="bulleted-list"><li style="list-style-type:disc">Search functionality to quickly find files and folders</li></ul><ul id="2ab2cb83-76c6-802c-8228-f0fc15038408" class="bulleted-list"><li style="list-style-type:disc">Support for all file types including Google Workspace documents</li></ul><p id="2ab2cb83-76c6-80ae-a520-c407719cb701" class=""><strong>File Operations</strong></p><ul id="2ab2cb83-76c6-800c-9dfc-f6d0abf35e1a" class="bulleted-list"><li style="list-style-type:disc">Download files and folders with progress tracking</li></ul><ul id="2ab2cb83-76c6-80ed-a8b0-efebdbcb3e00" class="bulleted-list"><li style="list-style-type:disc">Upload files and folders while preserving folder structure</li></ul><ul id="2ab2cb83-76c6-8091-bf6d-f159deb69972" class="bulleted-list"><li style="list-style-type:disc">Create new folders directly in Google Drive</li></ul><ul id="2ab2cb83-76c6-805e-b351-fa7e5a692a59" class="bulleted-list"><li style="list-style-type:disc">Rename, move, copy, and delete files and folders</li></ul><ul id="2ab2cb83-76c6-80a9-8559-ccd8aac315b7" class="bulleted-list"><li style="list-style-type:disc">Batch operations for multiple files simultaneously</li></ul></div><div class="feature-card"><h3 id="2ab2cb83-76c6-80dc-9743-e67e952a8405" class="">🔄 Advanced Download Manager</h3><p id="2ab2cb83-76c6-807e-ba06-cece12a5f744" class=""><strong>Smart Download System</strong></p><ul id="2ab2cb83-76c6-804c-97ac-e066ab15d3b5" class="bulleted-list"><li style="list-style-type:disc">Queue-based download management</li></ul><ul id="2ab2cb83-76c6-80c6-bf13-d32ebeb5db4b" class="bulleted-list"><li style="list-style-type:disc">Pause, resume, and cancel downloads</li></ul><ul id="2ab2cb83-76c6-803f-af1a-d428e0cb325e" class="bulleted-list"><li style="list-style-type:disc">Real-time progress tracking with speed indicators</li></ul><ul id="2ab2cb83-76c6-8063-97d7-c9170becc7bf" class="bulleted-list"><li style="list-style-type:disc">Automatic retry for failed downloads</li></ul><ul id="2ab2cb83-76c6-80b4-8179-eafc90659a64" class="bulleted-list"><li style="list-style-type:disc">Persistent download history across app restarts</li></ul><ul id="2ab2cb83-76c6-80d1-ac52-e92ffe4a5c09" class="bulleted-list"><li style="list-style-type:disc">Batch download multiple files and folders at once</li></ul><p id="2ab2cb83-76c6-80d9-8f86-ebd0fdc28d7d" class=""><strong>Folder Downloads</strong></p><ul id="2ab2cb83-76c6-8013-874f-cd2720edd8cd" class="bulleted-list"><li style="list-style-type:disc">Recursive folder downloading with structure preservation</li></ul><ul id="2ab2cb83-76c6-807d-a17b-cf1e1c0cbdf3" class="bulleted-list"><li style="list-style-type:disc">Automatic subfolder creation</li></ul><ul id="2ab2cb83-76c6-8014-b7d6-c3f13b954110" class="bulleted-list"><li style="list-style-type:disc">Progress tracking for entire folder hierarchies</li></ul></div><div class="feature-card"><h3 id="2ab2cb83-76c6-807e-ab47-f574a5667d0c" class="">⬆️ Powerful Upload Manager</h3><p id="2ab2cb83-76c6-80d3-9fda-edacccfd6418" class=""><strong>Efficient Upload System</strong></p><ul id="2ab2cb83-76c6-807f-bbf0-e305faf8d7ab" class="bulleted-list"><li style="list-style-type:disc">Queue-based upload management with progress tracking</li></ul><ul id="2ab2cb83-76c6-80f6-b289-fe2333146ed2" class="bulleted-list"><li style="list-style-type:disc">Upload files and folders while maintaining directory structure</li></ul><ul id="2ab2cb83-76c6-80e5-bdf0-ce87f140d565" class="bulleted-list"><li style="list-style-type:disc">Batch upload multiple items simultaneously</li></ul><ul id="2ab2cb83-76c6-8070-9056-d6809071ad9d" class="bulleted-list"><li style="list-style-type:disc">Real-time upload speed and time remaining indicators</li></ul><ul id="2ab2cb83-76c6-8093-80a6-c4ab3b02c5d4" class="bulleted-list"><li style="list-style-type:disc">Automatic retry for failed uploads</li></ul><ul id="2ab2cb83-76c6-807d-b342-d7b3cfd48097" class="bulleted-list"><li style="list-style-type:disc">Persistent upload history</li></ul><p id="2ab2cb83-76c6-80a8-bcc1-f412ffb03d85" class=""><strong>Smart File Handling</strong></p><ul id="2ab2cb83-76c6-8000-907a-c7139d039d36" class="bulleted-list"><li style="list-style-type:disc">Automatic file copying to secure upload directory</li></ul><ul id="2ab2cb83-76c6-8005-a1e8-d5da81ac6da2" class="bulleted-list"><li style="list-style-type:disc">Background processing for large uploads</li></ul><ul id="2ab2cb83-76c6-806f-8f09-ef2dd14d7a6f" class="bulleted-list"><li style="list-style-type:disc">Support for all file types and sizes</li></ul></div></div><div class="feature-grid"><div class="feature-card"><h3 id="2ab2cb83-76c6-80da-9d26-c2e6c912051f" class="">📄 Google Workspace Integration</h3><p id="2ab2cb83-76c6-8054-a343-cec31f45e0af" class=""><strong>Native Support for Google Files</strong></p><ul id="2ab2cb83-76c6-80c2-addb-c77114b5283d" class="bulleted-list"><li style="list-style-type:disc">Automatic export of Google Docs to DOCX format</li></ul><ul id="2ab2cb83-76c6-8070-b10c-f89e9dcdcd7c" class="bulleted-list"><li style="list-style-type:disc">Automatic export of Google Sheets to XLSX format</li></ul><ul id="2ab2cb83-76c6-8067-bdef-ee8cd3d6135a" class="bulleted-list"><li style="list-style-type:disc">Automatic export of Google Slides to PPTX format</li></ul><ul id="2ab2cb83-76c6-8043-bec9-c6001fff0df1" class="bulleted-list"><li style="list-style-type:disc">Export Google Drawings to PNG format</li></ul><ul id="2ab2cb83-76c6-8056-a36d-df5d0da34feb" class="bulleted-list"><li style="list-style-type:disc">Export Google Forms to PDF format</li></ul><ul id="2ab2cb83-76c6-80cd-89c8-d8c566ee01df" class="bulleted-list"><li style="list-style-type:disc">Quick Look preview with automatic format conversion</li></ul></div><div class="feature-card"><h3 id="2ab2cb83-76c6-800c-b2c4-f6b95cb93e73" class="">🔍 Smart File Organization</h3><p id="2ab2cb83-76c6-8055-bf34-dcd1633ac1c8" class=""><strong>Flexible Sorting Options</strong></p><ul id="2ab2cb83-76c6-8035-9099-d88e659cc988" class="bulleted-list"><li style="list-style-type:disc">Sort by name, type, date modified, or size</li></ul><ul id="2ab2cb83-76c6-80b6-8010-de8fb916500b" class="bulleted-list"><li style="list-style-type:disc">Ascending and descending order support</li></ul><ul id="2ab2cb83-76c6-807c-9717-f785b8312542" class="bulleted-list"><li style="list-style-type:disc">Folders always appear first for easy navigation</li></ul><p id="2ab2cb83-76c6-806a-ae34-c396f9685b44" class=""><strong>File Categories</strong></p><ul id="2ab2cb83-76c6-80cc-a70e-c284699b9970" class="bulleted-list"><li style="list-style-type:disc">View all files</li></ul><ul id="2ab2cb83-76c6-806e-a1a0-caba574c9d71" class="bulleted-list"><li style="list-style-type:disc">Filter by shared files</li></ul><ul id="2ab2cb83-76c6-8067-9fd8-f34f58a1979b" class="bulleted-list"><li style="list-style-type:disc">Recent files (last 7 days)</li></ul><ul id="2ab2cb83-76c6-8092-8f44-e9c6deb9c8f3" class="bulleted-list"><li style="list-style-type:disc">Photos and images</li></ul><ul id="2ab2cb83-76c6-80ab-9bad-e8eec2134375" class="bulleted-list"><li style="list-style-type:disc">Videos</li></ul><ul id="2ab2cb83-76c6-80be-b6fd-fcb3ce3f6c49" class="bulleted-list"><li style="list-style-type:disc">Documents</li></ul><ul id="2ab2cb83-76c6-80a8-8b8d-d95890ad53e2" class="bulleted-list"><li style="list-style-type:disc">Folders only</li></ul></div><div class="feature-card"><h3 id="2ab2cb83-76c6-80ad-91cd-cdfef31dbf78" class="">🔗 Sharing &amp; Collaboration</h3><p id="2ab2cb83-76c6-80db-a68e-e6a8ab87176e" class=""><strong>Easy Sharing</strong></p><ul id="2ab2cb83-76c6-8092-b6ba-ecb3011acb8f" class="bulleted-list"><li style="list-style-type:disc">Generate shareable links with one click</li></ul><ul id="2ab2cb83-76c6-804b-9e70-e369ce40f7d6" class="bulleted-list"><li style="list-style-type:disc">Copy links directly to clipboard</li></ul><ul id="2ab2cb83-76c6-80b3-9889-cb500acbad64" class="bulleted-list"><li style="list-style-type:disc">Share files via system share sheet</li></ul><ul id="2ab2cb83-76c6-80e2-ad0c-c5daa92bc64f" class="bulleted-list"><li style="list-style-type:disc">Batch sharing for multiple files</li></ul></div><div class="feature-card"><h3 id="2ab2cb83-76c6-80b5-8401-f22b7d439ca1" class="">👥 Multi-Account Support</h3><p id="2ab2cb83-76c6-8040-a573-e13c70f69dee" class=""><strong>Manage Multiple Google Accounts</strong></p><ul id="2ab2cb83-76c6-8019-b462-e4f6a2b5aadd" class="bulleted-list"><li style="list-style-type:disc">Add and switch between multiple Google Drive accounts</li></ul><ul id="2ab2cb83-76c6-8026-8a07-c012830295e1" class="bulleted-list"><li style="list-style-type:disc">Independent file management for each account</li></ul><ul id="2ab2cb83-76c6-8023-9af8-ef26bb9d4dc0" class="bulleted-list"><li style="list-style-type:disc">Secure token storage for each account</li></ul><ul id="2ab2cb83-76c6-80f2-b39b-e93dc50784c4" class="bulleted-list"><li style="list-style-type:disc">Quick account switching without re-authentication</li></ul></div></div><div class="feature-grid"><div class="feature-card"><h3 id="2ab2cb83-76c6-8085-b6f0-eb5435eee514" class="">💾 Storage Management</h3><p id="2ab2cb83-76c6-80b0-8b6e-f471f4feed11" class=""><strong>Monitor Your Space</strong></p><ul id="2ab2cb83-76c6-8007-a3d2-d9a46854181d" class="bulleted-list"><li style="list-style-type:disc">Real-time storage quota display</li></ul><ul id="2ab2cb83-76c6-8068-85d8-c68ccd47bbfd" class="bulleted-list"><li style="list-style-type:disc">Visual representation of used vs. available space</li></ul><ul id="2ab2cb83-76c6-80d1-a0ad-d976dca17a78" class="bulleted-list"><li style="list-style-type:disc">Track storage usage across accounts</li></ul></div><div class="feature-card"><h3 id="2ab2cb83-76c6-80a7-aeef-e095907e5683" class="">🎨 Beautiful User Interface</h3><p id="2ab2cb83-76c6-80ec-b7f0-ecd88bf1aaa6" class=""><strong>Native macOS Design</strong></p><ul id="2ab2cb83-76c6-807c-b540-ef7bc4062081" class="bulleted-list"><li style="list-style-type:disc">Clean, modern interface following macOS design guidelines</li></ul><ul id="2ab2cb83-76c6-80bc-8fb9-f167a563d463" class="bulleted-list"><li style="list-style-type:disc">Dark mode support</li></ul><ul id="2ab2cb83-76c6-80f6-9f8d-cb4d49c2d9ae" class="bulleted-list"><li style="list-style-type:disc">Responsive layout for all screen sizes</li></ul><ul id="2ab2cb83-76c6-8052-902e-c8b68b690ad0" class="bulleted-list"><li style="list-style-type:disc">Smooth animations and transitions</li></ul><ul id="2ab2cb83-76c6-80de-bd46-cc84a5da4e5e" class="bulleted-list"><li style="list-style-type:disc">Custom file type icons for better visual recognition</li></ul></div><div class="feature-card"><h3 id="2ab2cb83-76c6-80c7-9dd5-dc724b0972fd" class="">🔒 Security &amp; Privacy</h3><p id="2ab2cb83-76c6-8076-9d79-da67cb142b8c" class=""><strong>Your Data, Your Control</strong></p><ul id="2ab2cb83-76c6-800d-8d98-d85fa1347f5d" class="bulleted-list"><li style="list-style-type:disc">Secure OAuth 2.0 authentication</li></ul><ul id="2ab2cb83-76c6-8064-8e5d-ea7fa547f6c7" class="bulleted-list"><li style="list-style-type:disc">No data stored on our servers</li></ul><ul id="2ab2cb83-76c6-8042-8bf1-cdaaf96c4531" class="bulleted-list"><li style="list-style-type:disc">All operations performed directly with Google Drive</li></ul><ul id="2ab2cb83-76c6-8037-8b3e-ebe61ec435ab" class="bulleted-list"><li style="list-style-type:disc">Automatic token refresh for uninterrupted access</li></ul><ul id="2ab2cb83-76c6-80e3-8341-e11447106e31" class="bulleted-list"><li style="list-style-type:disc">Local file caching for quick previews</li></ul></div><div class="feature-card"><h3 id="2ab2cb83-76c6-80dc-9f0b-f0f812edcc17" class="">⚡ Performance Optimized</h3><p id="2ab2cb83-76c6-80b5-9e95-e68c502eb074" class=""><strong>Fast &amp; Efficient</strong></p><ul id="2ab2cb83-76c6-8062-aff2-ccacfc7dcdb6" class="bulleted-list"><li style="list-style-type:disc">Optimized for macOS performance</li></ul><ul id="2ab2cb83-76c6-80c9-8012-dae3c7cafdea" class="bulleted-list"><li style="list-style-type:disc">Minimal memory footprint</li></ul><ul id="2ab2cb83-76c6-8070-a7af-fd30efab19f6" class="bulleted-list"><li style="list-style-type:disc">Background task processing</li></ul><ul id="2ab2cb83-76c6-8083-adb6-cc321533ce6a" class="bulleted-list"><li style="list-style-type:disc">Efficient network usage</li></ul><ul id="2ab2cb83-76c6-80d7-a5f9-c571c94887b5" class="bulleted-list"><li style="list-style-type:disc">Smart caching for improved speed</li></ul></div></div><hr id="2ab2cb83-76c6-803d-9e0d-ebf48c902b58"/><h2 id="2ab2cb83-76c6-8091-95bc-c0c3e6ad8c0d" class="">How It Works</h2><div class="steps-container"><div class="step-card"><h3 id="2ab2cb83-76c6-8030-a874-fb3a045e024e" class="">1. Connect Your Account</h3><p id="2ab2cb83-76c6-80fa-901a-e851ce9aadfb" class="">Sign in with your Google account using secure OAuth 2.0 authentication. Quick Access for Google Drive never stores your password.</p></div><div class="step-card"><h3 id="2ab2cb83-76c6-8025-a5a0-f447dff73852" class="">2. Browse Your Files</h3><p id="2ab2cb83-76c6-8087-ba43-d12cbb3ba7eb" class="">Navigate through your Google Drive folders with an intuitive interface. Switch between list and grid views based on your preference.</p></div><div class="step-card"><h3 id="2ab2cb83-76c6-80b4-bcbb-d12b2c17136e" class="">3. Manage Your Files</h3><p id="2ab2cb83-76c6-8097-9c24-e4b9ed802d45" class="">Download, upload, organize, and share your files with powerful batch operations and queue management.</p></div><div class="step-card"><h3 id="2ab2cb83-76c6-80bd-819e-ecdf8b05573d" class="">4. Track Your Progress</h3><p id="2ab2cb83-76c6-80f6-a872-cefec048ebef" class="">Monitor all download and upload operations in real-time with detailed progress indicators and speed metrics.</p></div></div><hr id="2ab2cb83-76c6-8048-a275-d95034d621b1"/><div class="callout"><h2 id="2ab2cb83-76c6-8080-b12e-e5f44ec5e393" class="">System Requirements</h2><ul id="2ab2cb83-76c6-809e-9571-d837dccb1042" class="bulleted-list"><li style="list-style-type:disc">macOS 11.0 (Big Sur) or later</li></ul><ul id="2ab2cb83-76c6-8081-999e-e8504ad2d3c6" class="bulleted-list"><li style="list-style-type:disc">Active internet connection</li></ul><ul id="2ab2cb83-76c6-80d2-b4c0-fa4cfb5decca" class="bulleted-list"><li style="list-style-type:disc">Google account with Google Drive access</li></ul></div><hr id="2ab2cb83-76c6-80b0-8934-ca2040123ddf"/><div class="cta-section"><h2 id="2ab2cb83-76c6-806d-af70-fe9dbdf89f39" class="">Getting Started</h2><ol type="1" id="2ab2cb83-76c6-801e-9ae2-d9c86489841a" class="numbered-list" start="1"><li><strong>Download Quick Access for Google Drive</strong> from the Mac App Store</li></ol><ol type="1" id="2ab2cb83-76c6-80fa-9695-fbe1c1d29a84" class="numbered-list" start="2"><li><strong>Launch the application</strong> and sign in with your Google account</li></ol><ol type="1" id="2ab2cb83-76c6-8093-844a-c442e709d02b" class="numbered-list" start="3"><li><strong>Grant permissions</strong> to access your Google Drive</li></ol><ol type="1" id="2ab2cb83-76c6-8059-b236-cf7f59bd11b9" class="numbered-list" start="4"><li><strong>Start managing</strong> your files with ease</li></ol></div><hr id="2ab2cb83-76c6-809d-8979-e37f5534a925"/><h2 id="2ab2cb83-76c6-80e0-874b-e059b47b6518" class="">Frequently Asked Questions</h2><div class="faq-item"><h3 id="2ab2cb83-76c6-80d8-b183-c4002b46f51b" class="">1. Is Quick Access for Google Drive free?</h3><p id="2ab2cb83-76c6-80f9-b017-f79bd493c3b2" class="">Quick Access for Google Drive offers both free and premium features. Basic file management is available to all users, with advanced features available through in-app purchase.</p></div><div class="faq-item"><h3 id="2ab2cb83-76c6-803f-bc20-ceadf4859e6f" class="">2. Is my data safe?</h3><p id="2ab2cb83-76c6-80fb-8b26-de1198e86c4d" class="">Absolutely. Quick Access for Google Drive uses Google&#x27;s official OAuth 2.0 authentication and communicates directly with Google Drive APIs. We never store your credentials or access your data on our servers.</p></div><div class="faq-item"><h3 id="2ab2cb83-76c6-809a-9e85-e6de34ccc4f2" class="">3. Can I use Quick Access for Google Drive offline?</h3><p id="2ab2cb83-76c6-80c1-b5c8-f4b96d7a06be" class="">Quick Access for Google Drive requires an internet connection to access your Google Drive files. However, downloaded files are available offline on your Mac.</p></div><div class="faq-item"><h3 id="2ab2cb83-76c6-8067-878a-d47e473566e5" class="">4. How many accounts can I add?</h3><p id="2ab2cb83-76c6-8072-ad96-cc4ca604f0c4" class="">You can add and manage multiple Google accounts, switching between them seamlessly within the app.</p></div><div class="faq-item"><h3 id="2ab2cb83-76c6-807e-b425-f428915a498f" class="">5. What file types are supported?</h3><p id="2ab2cb83-76c6-805e-be99-d561a6be7783" class="">Quick Access for Google Drive supports all file types stored in Google Drive, including Google Workspace documents (Docs, Sheets, Slides), images, videos, PDFs, and more.</p></div><div class="faq-item"><h3 id="2ab2cb83-76c6-8038-83b3-cd40056bbed6" class="">6. Can I upload folders?</h3><p id="2ab2cb83-76c6-8024-9194-eb549e54f4e5" class="">Yes! Quick Access for Google Drive supports uploading entire folders while preserving their structure, including nested subfolders.</p></div><div class="faq-item"><h3 id="2ab2cb83-76c6-8033-992b-ea90a3db104a" class="">7. What happens if a download or upload fails?</h3><p id="2ab2cb83-76c6-809e-b9ff-e8cfbfe80ee7" class="">Failed tasks can be easily retried with one click. Quick Access for Google Drive also provides detailed error messages to help you understand what went wrong.</p></div><hr id="2ab2cb83-76c6-80fe-a311-d174c1ac89bb"/><div class="support-box"><h2 id="2ab2cb83-76c6-8051-a20a-fead72bfe99e" class="">Support</h2><p id="2ab2cb83-76c6-8025-945c-dfded95ad05c" class="">Need help? Have questions or feedback?</p><p><strong>Email</strong>: <a href="mailto:shieldapps.feedback@gmail.com">shieldapps.feedback@gmail.com</a></p></div><hr id="2ab2cb83-76c6-8029-98d9-cd5b97070aa8"/><h2 id="2ab2cb83-76c6-80f5-ba9f-e96d7375815c" class="">Privacy &amp; Legal</h2><div class="feature-grid"><div class="feature-card"><h3 id="2ab2cb83-76c6-80ae-bf65-e2f54e919ce9" class="">🔐 Privacy Policy</h3><p id="2ab2cb83-76c6-80e4-aebb-e08a38eca621" class="">We take your privacy seriously. Read our complete privacy policy to understand how we handle your data.</p><p id="2ab2cb83-76c6-80d0-855c-e882427b908c" class=""><a href="https://www.shieldapps.top/quickaccessforgoogledrive/privacy/">Read Privacy Policy →</a></p></div><div class="feature-card"><h3 id="2ab2cb83-76c6-806a-bfc7-e4897fe80847" class="">📋 Terms &amp; Conditions</h3><p id="2ab2cb83-76c6-80f9-9545-c123c3c2981a" class="">By using Quick Access for Google Drive, you agree to our terms and conditions.</p><p id="2ab2cb83-76c6-805f-a00c-d01dc55f170e" class=""><a href="https://www.shieldapps.top/quickaccessforgoogledrive/terms/">Read Terms &amp; Conditions →</a></p></div></div><hr id="2ab2cb83-76c6-8060-a3d1-c1ebb6628a4f"/><div class="disclaimer-box"><h2 id="2ab2cb83-76c6-806b-925d-cf7d356cb9f5" class="">DISCLAIMER</h2><p id="2ab2cb83-76c6-8065-97a8-d46cd67b3661" class=""><strong>This is an independent third-party application developed using the official Google Drive APIs. It is not affiliated with, endorsed by, or produced by Google LLC.</strong></p><p id="2ab2cb83-76c6-80ca-9f9f-ef5f1b3084b0" class="">&quot;Google Drive,&quot; &quot;Google Docs,&quot; &quot;Google Sheets,&quot; &quot;Google Slides,&quot; and all associated trademarks, service marks, logos, and trade names are the property of Google LLC. All other trademarks are the property of their respective owners.</p><p id="2ab2cb83-76c6-808b-bcd3-d3510b1efe78" class="">Quick Access for Google Drive is an independent software application that provides enhanced file management capabilities for Google Drive through the use of publicly available Google Drive APIs. The use of Google&#x27;s trademarks is for descriptive purposes only to indicate compatibility and functionality.</p></div><p id="2ab2cb83-76c6-80ec-939e-dcea2ff419ec" class="">
+</p><hr id="2ab2cb83-76c6-805b-882c-d0f1e93ed9bd"/><div class="footer-section"><p id="2ab2cb83-76c6-807a-80f9-d1f47381f0c1" class="">© 2025 Shield Apps. All rights reserved.</p><p style="margin-top: 15px; font-size: 0.9em;"><a href="https://www.shieldapps.top/quickaccessforgoogledrive/privacy/" style="color: #667eea; text-decoration: none; margin: 0 10px;">Privacy Policy</a> | <a href="https://www.shieldapps.top/quickaccessforgoogledrive/terms/" style="color: #667eea; text-decoration: none; margin: 0 10px;">Terms of Service</a></p></div></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span>
+
+<script>
+// Fixed header functionality
+window.addEventListener('scroll', function() {
+	const fixedHeader = document.getElementById('fixedHeader');
+	const heroSection = document.querySelector('.hero-section');
+	
+	if (heroSection) {
+		const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+		
+		if (window.scrollY > heroBottom) {
+			fixedHeader.classList.add('visible');
+		} else {
+			fixedHeader.classList.remove('visible');
+		}
+	}
+});
+
+// Scroll to support section
+function scrollToSupport() {
+	const supportBox = document.querySelector('.support-box');
+	if (supportBox) {
+		const headerHeight = 80; // Fixed header height
+		const elementPosition = supportBox.getBoundingClientRect().top;
+		const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20;
+		
+		window.scrollTo({
+			top: offsetPosition,
+			behavior: 'smooth'
+		});
+	}
+}
+</script>
+
+</body></html>
