@@ -27,6 +27,22 @@ body {
 	white-space: pre-wrap;
 }
 
+/* Notion export used pre-wrap on body; pretty-printed HTML adds literal newlines between tags.
+   Reset to normal flow inside legal content (matches minified pages like quickaccessforgoogledrive). */
+.page-body {
+	white-space: normal;
+}
+
+.page-body p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.page-body ul {
+	margin-top: 0.35em;
+	margin-bottom: 0.75em;
+}
+
 a,
 a.visited {
 	color: inherit;
