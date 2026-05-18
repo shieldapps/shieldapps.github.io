@@ -1,4 +1,4 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Quick Access for Google Photos — Fast access &amp; quick uploads on macOS</title><style>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Quick Access for Google Photos — Google Sign-In SDK, browser library &amp; quick uploads</title><style>
 /* webkit printing magic: print all background colors */
 html {
 	-webkit-print-color-adjust: exact;
@@ -416,41 +416,41 @@ img {
 	</div>
 	<button class="fixed-header-contact" onclick="scrollToSupport()">Contact Us</button>
 </div>
-<article class="page sans"><div class="container"><header class="hero-section"><figure class="image" style="text-align:center;margin:0 0 2rem 0"><a href="icon.png"><img style="width:180px" alt="App icon" src="icon.png"/></a></figure><h1 class="page-title">Quick Access for Google Photos</h1><p class="page-description">Native macOS companion for Google Photos: open your library in one place, then upload from anywhere on your Mac—without hunting for a browser tab.</p><div class="pillar-row"><div class="pillar-box"><h2>⚡ Quick access</h2><p>Stay signed in and jump straight into Google Photos from a dedicated window: familiar web experience with a native toolbar, multi-account switching, and a menu-bar presence so your library is always within reach.</p></div><div class="pillar-box"><h2>📤 Quick upload</h2><p>Add photos and videos through native uploads with queue &amp; progress: drag files to the Dock icon, use the Share menu, run a Finder Service, or pick files from the menu bar—ideal when the fastest path is “send it to Photos now.”</p></div></div></header><div class="page-body"></div><hr/>
+<article class="page sans"><div class="container"><header class="hero-section"><figure class="image" style="text-align:center;margin:0 0 2rem 0"><a href="icon.png"><img style="width:180px" alt="App icon" src="icon.png"/></a></figure><h1 class="page-title">Quick Access for Google Photos</h1><p class="page-description">Native macOS companion for Google Photos: sign in through Google’s official Sign-In SDK for macOS, open your library in your default web browser, and upload photos or videos with queue &amp; progress from the menu bar, Share sheet, Finder Services—or by dropping files onto the Dock icon.</p><div class="pillar-row"><div class="pillar-box"><h2>📤 Quick upload</h2><p>Upload locally through the Photos Library API with batched queues: click <strong>Upload</strong> from the menu bar, use Share → <strong>Upload to Google Photos</strong>, or Finder <strong>Services</strong> → <strong>Upload to Google Photos</strong>; you can still drag pictures or clips onto the Dock icon when speed matters.</p></div><div class="pillar-box"><h2>⚡ Quick access</h2><p>Authenticate with Google’s supported OAuth flow via the Sign-In SDK, then open photos.google.com in <strong>Safari, Chrome,</strong> or whatever you’ve set as the <strong>default browser</strong>, so browsing matches the standard Google Photos site you already use.</p></div></div></header><div class="page-body"></div><hr/>
 
 <h2>What you can do</h2>
 <div class="feature-grid">
+
 <div class="feature-card">
-<h3>🖼️ Browse Google Photos in-app</h3>
-<p><strong>Familiar photos.google.com experience</strong></p>
+<h3>📤 Quick upload from the system</h3>
+<p><strong>Three core entry points (+ Dock)</strong></p>
 <ul>
-<li>Use Google Photos in a dedicated window with back, forward, reload, and Home</li>
-<li>Upload and organize using the same web UI you already know</li>
-<li>Support for saving downloads where macOS allows (standard web downloads)</li>
-<li>Appearance tuned for macOS, including dark mode styling assistance</li>
+<li><strong>Menu bar:</strong> tap the status item and choose <strong>Upload</strong>, then pick images or movies from the picker</li>
+<li><strong>Share:</strong> select files in Photos or Finder—then Share → <strong>Upload to Google Photos</strong></li>
+<li><strong>Finder Services:</strong> right-click supported files → <strong>Services</strong> → <strong>Upload to Google Photos</strong></li>
+<li><strong>Optional — Dock:</strong> drag pictures or clips onto the app icon when you prefer drag-and-drop</li>
+<li>Native uploads go to Google over the Photos Library API with batches, visible progress in the menu bar popover, and persisted queue state across sessions</li>
 </ul>
 </div>
 
 <div class="feature-card">
-<h3>📤 Quick upload from the system</h3>
-<p><strong>Shortcuts that skip the browser</strong></p>
-<ul>
-<li><strong>Dock:</strong> drag photos or videos onto the app icon (including multiple files)</li>
-<li><strong>Share extension:</strong> send items from Photos, Finder, or other apps into the upload flow</li>
-<li><strong>Finder Services:</strong> upload via the Services menu (e.g. contextual workflow)</li>
-<li><strong>Menu bar:</strong> add files from an upload picker without opening the main window first</li>
-<li>Batched queue with overall progress, pause/resume, and persisted state across sessions</li>
-</ul>
-</div>
+	<h3>🌐 Browse Google Photos in your default browser</h3>
+	<p><strong>Trusted web experience plus native shell</strong></p>
+	<ul>
+	<li>When you choose to browse the library from the app, links open in your <strong>default browser</strong>, consistent with visiting Google Photos in the browser you use day to day</li>
+	<li>Photos, albums, editing, sharing, purchases, and downloads work through the authentic photos.google.com site and your browser’s capabilities</li>
+	<li>Companion macOS menus and settings coordinate accounts, uploads, and keyboard-friendly shortcuts separately from the webpage</li>
+	</ul>
+	</div>
 
 <div class="feature-card">
 <h3>📊 Menu bar status &amp; queue</h3>
 <p><strong>Always-visible control</strong></p>
 <ul>
-<li>Status item shows when uploads are active or need attention</li>
-<li>Popover lists batches and per-file status</li>
-<li>Open the main Google Photos window or preferences from the menu bar</li>
-<li>Closing the main window does not have to stop background uploads</li>
+<li>The status item shows when uploads run, finish, or need attention</li>
+<li>The popover lists batches and per-file status without keeping a browser tab open</li>
+<li>Open the library in your browser, tweak preferences in the native window, or add more files from here</li>
+<li>Closing other windows doesn’t have to pause background uploads that are already running</li>
 </ul>
 </div>
 </div>
@@ -459,28 +459,19 @@ img {
 <div class="feature-card">
 <h3>👥 Multiple Google accounts</h3>
 <ul>
-<li>Add more than one Google account and switch from the toolbar</li>
-<li>Separate web session data per account</li>
-<li>Upload queues are scoped per account—switching accounts follows in-app safeguards</li>
+<li>Add multiple Google identities and switch targets from the native account UI</li>
+<li>Signing in uses Google’s <strong>Sign-In SDK</strong>; the app coordinates which account feeds API uploads without routing your library traffic through Shield Apps servers</li>
+<li>Queues and batches stay tied to the account you selected so switching won’t silently mix uploads</li>
 </ul>
 </div>
 
 <div class="feature-card">
 <h3>🔐 Privacy-minded design</h3>
 <ul>
-<li>OAuth 2.0 sign-in; tokens stored in the macOS Keychain</li>
-<li>No Shield Apps server in the middle for your library: API calls go to Google</li>
-<li>Limited Photos Library API scope for native uploads (<code>photoslibrary.appendonly</code>)</li>
+<li>OAuth 2.0 via Google’s Sign-In SDK; refreshable tokens reside in the macOS Keychain (the app never sees your Google password)</li>
+<li>No Shield Apps server in the middle: Photos Library requests go straight to Google’s documented endpoints</li>
+<li>Limited Photos Library scope for native uploads (<code>photoslibrary.appendonly</code>)</li>
 </ul>
-</div>
-
-<div class="feature-card">
-<h3>💎 Pro options</h3>
-<ul>
-<li>Subscription or one-time purchase may unlock extended usage (see in-app details on the Mac App Store)</li>
-<li>Restore purchases supported through Apple’s standard flow</li>
-</ul>
-</div>
 </div>
 
 <hr/>
@@ -489,19 +480,19 @@ img {
 <div class="steps-container">
 <div class="step-card">
 <h3>1. Sign in securely</h3>
-<p>Connect your Google account with OAuth. The app never sees your Google password.</p>
+<p>Connect accounts with Google’s official Sign-In SDK on macOS. OAuth tokens are synchronized with Apple’s secure storage—not your password.</p>
 </div>
 <div class="step-card">
 <h3>2. Quick access</h3>
-<p>Open Google Photos in the main window whenever you want a full browsing session—toolbar controls and account switching stay native.</p>
+<p>Use the companion UI to jump into Google Photos whenever you’re ready—it opens your default browser while account controls stay native.</p>
 </div>
 <div class="step-card">
 <h3>3. Quick upload</h3>
-<p>Drop files on the Dock icon, Share to the app, use Services, or choose files from the menu bar. Track everything in the upload popover.</p>
+<p>Menu bar Upload, Share → Upload to Google Photos, Services → Upload to Google Photos, or drop files onto the Dock. Watch batches in the menu bar popover.</p>
 </div>
 <div class="step-card">
 <h3>4. Keep working</h3>
-<p>Leave the window closed if you like—the menu bar keeps uploads visible until they finish.</p>
+<p>Leave browser tabs alone if you want—the queue lives in the menu bar until uploads finish.</p>
 </div>
 </div>
 
@@ -522,9 +513,9 @@ img {
 <h2>Get started</h2>
 <ol>
 <li><strong>Install</strong> <a href="https://apps.apple.com/app/id6768488342" style="color: inherit; font-weight: 700; text-decoration: underline;">Quick Access for Google Photos from the Mac App Store</a></li>
-<li><strong>Sign in</strong> and approve the requested Google permissions</li>
-<li><strong>Use Quick access</strong> to open your library in the main window</li>
-<li><strong>Use Quick upload</strong> from the Dock, Share sheet, Services, or menu bar when speed matters</li>
+<li><strong>Sign in</strong> with Google Sign-In SDK and approve only the scopes the app explains</li>
+<li><strong>Use Quick upload</strong>: menu bar Upload, Share → Upload to Google Photos, Services → Upload to Google Photos, or Dock drag-and-drop</li>
+<li><strong>Use Quick access</strong> to open Google Photos in your default browser from the companion UI</li>
 </ol>
 </div>
 
@@ -541,7 +532,7 @@ img {
 <div class="disclaimer-box">
 <h2>DISCLAIMER</h2>
 <p><strong>Quick Access for Google Photos is independent software from Shield Apps. It is not affiliated with, endorsed by, or produced by Google LLC.</strong></p>
-<p>“Google Photos,” “Google,” and related trademarks are the property of Google LLC. This app uses Google’s OAuth and, for native quick uploads, the Google Photos Library API as documented by Google. Use of Google’s trademarks here is only to describe compatibility.</p>
+<p>“Google Photos,” “Google,” and related trademarks are the property of Google LLC. This app authenticates accounts with Google’s Sign-In SDK for macOS, opens Google Photos in your system default browser when you browse the library from the companion, and uses the Google Photos Library API for documented native uploads. Use of Google’s trademarks here is only to describe compatibility.</p>
 </div>
 
 <hr/>
